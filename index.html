@@ -4,16 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
+    <header >
+        <style>
+            
+            *{
+                font-family: 'Exo 2', sans-serif;
+                padding: 0;
+                margin: 0;
+                outline: none;
+                box-sizing: border-box;
+                text-decoration: none;
+                list-style: none;
+            }
+            
+            .header-btn-control{
+                background-color: #2e343b;
+                display: none;
+            }
+            .header-btn-control svg{
+                fill: white;
+
+            }
+            header{
+              z-index: 20;
+              position: absolute;
+              width: 100%;  
+              background-color: #2e343b;
+                padding: 0 50px;
+                
+            }
+            .header-exact{
+                width: 100%;
+                max-width: 1640px;
+                display: grid;
+                margin: 0 auto;
+                align-items: center;
+              height: 80px;
+
+            }
+            header svg {
+                height: 50px;
+            }
+            header .logo-link{
+                position: absolute;
+                height: 260px;
+                z-index: 40;
+
+            }
+            header .logo-link img
+            {
+                height: 100%;
+            }
+            header .logo-link img{
+                transform: translate(0,25px);
+            }
+            .header-navbar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .header-meta-control{
+                display: grid;
+                grid-template-columns: auto auto auto;
+                column-gap: 85px;
+            }
+            .header-meta-control-link{
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            .header-meta-control-link svg{
+                width: 20px;
+                margin-right: 15px;
+                height: 20px;
+                fill: #ffcc00;
+            }
+            .header-meta-control-link{
+                color: white;
+            }
+            .header-meta-control-link.with-links{
+                column-gap: 25px;
+            }
+            .header-navbar{
+                justify-self: end;
+                padding-left: 320px;
+                max-width: 1640px;
+                width: 100%;
+            }
+            .header-navbar-links a{
+                font-size: 18px;
+                font-weight: 800;
+                text-transform: uppercase;
+                color: white;
+            }
+            .header-navbar-links a:hover{
+                text-decoration: underline;
+            }
+            .header-navbar-links{
+                display: flex;
+                column-gap: 100px;
+            }
+            .header-meta-control-link a{
+                color: white;
+                
+            }
+            .header-meta-control-link a:hover{
+                text-decoration: underline;
+            }
+
+            .language-link{
+                position: relative;
+            }
+            .language-link::before{
+                content: "";
+                width: 2px;
+                height: 14px;
+                background-color: white;
+                top: 50%;
+                left: 0;
+                transform: translate(-14px, -50%);
+                position: absolute;
+
+            }
+            @media screen and (max-width: 1500px) {
+                .header-navbar{
+                    padding-left: 200px;
+                }
+
+            }
+            @media screen and (max-width: 1350px) {
+                .header-navbar-links {
+                    column-gap: 40px;
+                }
+                .header-meta-control {
+                    column-gap: 40px;
+                }
+            }
+            @media screen and (max-width: 1200px) {
+                header .logo-link{
+                    height: 150px;
+                }
+                .header-navbar{
+                    padding-left: 120px;
+                }
+            }
+            @media screen and (max-width: 1110px) {
+                .header-meta-control {
+                    column-gap: 20px;
+                }
+                .header-meta-control-link svg{
+                    margin-right: 5px;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                header .logo-link img{
+                transform: translate(0,15px);
+            }
+                .header-navbar{
+                    display: none;
+                    padding: 0;
+                }
+            header .logo-link{
+                height: 80px;
+            }
+                .header-btn-control{
+                    display: block;
+                    justify-self: end;
+                    padding: 6px;
+                    border: 2px solid white;
+                    border-radius: 5px;
+                }
+                .header-btn-control svg{
+                    height: 30px;
+                    width: 30px;
+                    display: block;
+                }
+                .header-btn-control:hover{
+                    border-color: #ffcc00;
+                    cursor: pointer;
+                }
+                .header-btn-control:hover svg{
+                    fill: #ffcc00;
+                }
+                .header-navbar{
+                    position: absolute;
+                    left: 0;
+                    padding: 40px 0 10px;
+                    justify-items: start;
+                    background-color: #2e343b;
+                    grid-template-columns: auto;
+                    transform: translate(0 , 80px);
+                }
+                .header-navbar>*{
+                    justify-items: start;
+                    padding-left: 50px;
+                }
+                .header-navbar>*>*{
+                    margin-bottom: 20px;
+                }
+                .header-navbar-links{
+                    grid-template-columns: auto;
+                    display: grid;
+                }
+                .header-navbar-links a{
+                    display: block;
+                }
+                .header-meta-control{
+                    grid-template-columns: auto;
+                }
+            }
+            .display_block{
+                display: block;
+            }
+            .contacts-social{
+                display: flex;
+            }
+            .contacts-social svg{
+                height: 40px;
+                width: 40px;
+            }
+            .main-page-content{
+                display: grid;
+                z-index: 20;
+                font-weight: 800;
+                font-size: 53px;
+                color: #2e343b;
+                margin: 0 auto;
+                padding: 0 50px;
+                width: 100%;
+                max-width: 1640px;
+                padding-bottom: 60px;
+                min-height: 100vh;
+                align-items: end;
+                gap: 150px;
+                grid-template-rows: 1fr auto;
+            }
+            .main-page-text-row{
+                background-color: #ffcc00;
+                color: #2e343b;
+                margin: 5px 0;
+                padding: 4px 10px;
+            }
+            .main-page-text{
+                display: grid;
+                justify-items: start;
+            }
+            .main-page-content-links{
+                display: grid;
+                justify-items: center;
+            }
+            .contacts-social{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 30px;
+            }
+            
+            .contacts-social li a svg{
+                fill: #ffcc00;
+                cursor: pointer;
+            }
+            .contacts-social li a:hover svg{
+                fill: #ffcc00ad;
+            }
+            
+            @media screen and (max-width: 1400px) {
+                .main-page-text-row {
+                    font-size: 40px;
+                }
+            }
+            @media screen and (max-width: 1100px) {
+                .main-page-text-row {
+                    font-size: 30px;
+                }
+            }
+            @media screen and (max-width: 700px) {
+                .main-page-content{
+                    gap: 90px;
+                }
+                .main-page-text-row {
+                    font-size: 25px;
+                }
+            }
+</style>
+        <div class="header-exact">
+            <a class="logo-link" href="#">
+                <img class="logo-img" src="./images/Logofull.svg" alt="">
+            </a>
+            <button class="header-btn-control" id="menu-adaptive-btn">
+                <svg height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>
+            </button>
+            <div class="header-navbar" id="menu-adaptive">
+                <div class="header-navbar-links">
+                    <a href="/">home</a>
+                    <a href="/contact">contact us</a>
+                </div>
+                <div class="header-meta-control">
+                    <div class="header-meta-control-link">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g>	<g>		<path d="M467,61H45c-6.927,0-13.412,1.703-19.279,4.51L255,294.789l51.389-49.387c0,0,0.004-0.005,0.005-0.007			c0.001-0.002,0.005-0.004,0.005-0.004L486.286,65.514C480.418,62.705,473.929,61,467,61z"/>	</g></g><g>	<g>		<path d="M507.496,86.728L338.213,256.002L507.49,425.279c2.807-5.867,4.51-12.352,4.51-19.279V106			C512,99.077,510.301,92.593,507.496,86.728z"/>	</g></g><g>	<g>		<path d="M4.51,86.721C1.703,92.588,0,99.073,0,106v300c0,6.923,1.701,13.409,4.506,19.274L173.789,256L4.51,86.721z"/>	</g></g><g>	<g>		<path d="M317.002,277.213l-51.396,49.393c-2.93,2.93-6.768,4.395-10.605,4.395s-7.676-1.465-10.605-4.395L195,277.211			L25.714,446.486C31.582,449.295,38.071,451,45,451h422c6.927,0,13.412-1.703,19.279-4.51L317.002,277.213z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <div>info@yellowgarage.co</div>
+                    </div>
+                    <div class="header-meta-control-link">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 387.2 387.2" style="enable-background:new 0 0 387.2 387.2;" xml:space="preserve"><g>	<g>		<path d="M304.8,10.84l0-0.04C297.927,3.891,288.585,0.004,278.84,0H108.32C88.067,0.066,71.666,16.467,71.6,36.72v313.72			c0.004,9.745,3.891,19.087,10.8,25.96c6.863,6.899,16.189,10.785,25.92,10.8h170.56c9.731-0.015,19.057-3.901,25.92-10.8			c6.899-6.863,10.785-16.189,10.8-25.92V36.76C315.585,27.029,311.699,17.703,304.8,10.84z M193.6,362.28L193.6,362.28			c-5.479,0-9.92-4.441-9.92-9.92c0-5.479,4.441-9.92,9.92-9.92c5.479,0,9.92,4.441,9.92,9.92			C203.52,357.839,199.079,362.28,193.6,362.28z M286.44,300c0,13.255-10.745,24-24,24H124.72c-13.255,0-24-10.745-24-24V66.2			c0-13.255,10.745-24,24-24h137.76c13.255,0,24,10.745,24,24L286.44,300z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        <div>0 800 331 011</div>
+                    </div>
+                    <div class="header-meta-control-link with-links">
+                        <a href="/login">Login</a>
+                        <a class="language-link" href="/en">EN</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>  
+    </header>
+    <script>
+        let menu_btn = document.getElementById("menu-adaptive-btn")
+        let menu_adaptive = document.getElementById("menu-adaptive")
+
+        
+        menu_btn.onclick = function myFunction() {
+if (menu_adaptive.className === "header-navbar") {
+    menu_adaptive.className = "header-navbar display_block";
+} else {
+    menu_adaptive.className = "header-navbar";
+}
+}
+
+    </script>
     <div class="bg-video-wrap">
         <video src="./FILE007_1.mp4" loop muted autoplay>
         </video>
-        <div class="overlay">
-        </div>
-        <h1>Fullscreen video background
-        </h1>
+        
       </div>
+      <div class="main-page-content">
+        <div class="main-page-text">
+            <div class="main-page-text-row">
+                ПРИВЕЗЁМ ИЗ США
+            </div>
+            <div class="main-page-text-row">
+                ВСЕ ЧТО ЛЕТИТ, ЕЗДИТ ИЛИ ПЛАВАЕТ
+            </div>
+            <div class="main-page-text-row">
+                ЗАКАЖИТЕ РАСЧЁТ НА ДОСТАВКУ ВАШЕГО АВТО
+            </div>
+        </div>
+        <div class="main-page-content-links">
+            <ul class="contacts-social">
+                <li>
+                    <a href="https://www.facebook.com/yellowgarage.co" target="_blank">
+                        <svg viewBox="-21 -21 682.66669 682.66669" xmlns="http://www.w3.org/2000/svg"><path d="m604.671875 0h-569.375c-19.496094.0117188-35.30078125 15.824219-35.296875 35.328125v569.375c.0117188 19.496094 15.824219 35.300781 35.328125 35.296875h306.546875v-247.5h-83.125v-96.875h83.125v-71.292969c0-82.675781 50.472656-127.675781 124.222656-127.675781 35.324219 0 65.679688 2.632812 74.527344 3.808594v86.410156h-50.855469c-40.125 0-47.894531 19.066406-47.894531 47.050781v61.699219h95.9375l-12.5 96.875h-83.4375v247.5h162.796875c19.507813.003906 35.324219-15.804688 35.328125-35.3125 0-.003906 0-.007812 0-.015625v-569.375c-.007812-19.496094-15.824219-35.30078125-35.328125-35.296875zm0 0"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/yellowgarage.co/?hl=ru" target="_blank">
+                        <svg viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg"><path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm-117.40625 395.996094c-77.195312 0-139.996094-62.800782-139.996094-139.996094s62.800782-139.996094 139.996094-139.996094 139.996094 62.800782 139.996094 139.996094-62.800782 139.996094-139.996094 139.996094zm143.34375-246.976563c-22.8125 0-41.367188-18.554687-41.367188-41.367187s18.554688-41.371094 41.367188-41.371094 41.371094 18.558594 41.371094 41.371094-18.558594 41.367187-41.371094 41.367187zm0 0"></path><path d="m256 146.019531c-60.640625 0-109.980469 49.335938-109.980469 109.980469 0 60.640625 49.339844 109.980469 109.980469 109.980469 60.644531 0 109.980469-49.339844 109.980469-109.980469 0-60.644531-49.335938-109.980469-109.980469-109.980469zm0 0"></path><path d="m399.34375 96.300781c-6.257812 0-11.351562 5.09375-11.351562 11.351563 0 6.257812 5.09375 11.351562 11.351562 11.351562 6.261719 0 11.355469-5.089844 11.355469-11.351562 0-6.261719-5.09375-11.351563-11.355469-11.351563zm0 0"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://invite.viber.com/?g2=AQBrCzOf7CmAcEx1x9XTnGdDLBb4SOA5J+9zk5z7Do0PO9AF8PIn1ad9w86JF0nn">
+                        <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="m23.155 13.893c.716-6.027-.344-9.832-2.256-11.553l.001-.001c-3.086-2.939-13.508-3.374-17.2.132-1.658 1.715-2.242 4.232-2.306 7.348-.064 3.117-.14 8.956 5.301 10.54h.005l-.005 2.419s-.037.98.589 1.177c.716.232 1.04-.223 3.267-2.883 3.724.323 6.584-.417 6.909-.525.752-.252 5.007-.815 5.695-6.654zm-12.237 5.477s-2.357 2.939-3.09 3.702c-.24.248-.503.225-.499-.267 0-.323.018-4.016.018-4.016-4.613-1.322-4.341-6.294-4.291-8.895.05-2.602.526-4.733 1.93-6.168 3.239-3.037 12.376-2.358 14.704-.17 2.846 2.523 1.833 9.651 1.839 9.894-.585 4.874-4.033 5.183-4.667 5.394-.271.09-2.786.737-5.944.526z"></path><path d="m12.222 4.297c-.385 0-.385.6 0 .605 2.987.023 5.447 2.105 5.474 5.924 0 .403.59.398.585-.005h-.001c-.032-4.115-2.718-6.501-6.058-6.524z"></path><path d="m16.151 10.193c-.009.398.58.417.585.014.049-2.269-1.35-4.138-3.979-4.335-.385-.028-.425.577-.041.605 2.28.173 3.481 1.729 3.435 3.716z"></path><path d="m15.521 12.774c-.494-.286-.997-.108-1.205.173l-.435.563c-.221.286-.634.248-.634.248-3.014-.797-3.82-3.951-3.82-3.951s-.037-.427.239-.656l.544-.45c.272-.216.444-.736.167-1.247-.74-1.337-1.237-1.798-1.49-2.152-.266-.333-.666-.408-1.082-.183h-.009c-.865.506-1.812 1.453-1.509 2.428.517 1.028 1.467 4.305 4.495 6.781 1.423 1.171 3.675 2.371 4.631 2.648l.009.014c.942.314 1.858-.67 2.347-1.561v-.007c.217-.431.145-.839-.172-1.106-.562-.548-1.41-1.153-2.076-1.542z"></path><path d="m13.169 8.104c.961.056 1.427.558 1.477 1.589.018.403.603.375.585-.028-.064-1.346-.766-2.096-2.03-2.166-.385-.023-.421.582-.032.605z"></path></g></svg>                    </a>
+                </li>
+                <li>
+                    <a href="http://t.me/Yellowgarage20" target="_blank">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </body>
 </html>
 <style>
@@ -22,16 +383,20 @@
   padding: 0;
 }
 .bg-video-wrap {
-  position: relative;
+  position: absolute;
   overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
   width: 100%;
+  z-index: -1;
   height: 100vh;
 /*   background: url(https://designsupply-web.com/samplecontent/vender/codepen/20181014.png) no-repeat center center/cover; */
 }
 video {
   min-width: 100%;
-  min-height: 100vh;
-  z-index: 1;
+  min-height: 100%;
+  z-index: -1;
 }
 .overlay {
   width: 100%;
