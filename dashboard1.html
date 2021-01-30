@@ -10,14 +10,14 @@
 <body>
     <header >
         <div class="header-exact">
-            <a class="logo-link" href="#">
+            <a class="logo-link logo-image-150px" href="#">
                 <img class="logo-img" src="./images/Logofull.svg" alt="">
             </a>
             <button class="header-btn-control" id="menu-adaptive-btn">
                 <svg height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg"><path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/><path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/></svg>
             </button>
             <div class="header-navbar" id="menu-adaptive">
-                <div class="header-navbar-links">
+                <div class="header-navbar-links display_none_for_children">
                     <a href="/">home</a>
                     <a href="/contact">contact us</a>
                 </div>
@@ -31,39 +31,182 @@
                         <div>0 800 331 011</div>
                     </div>
                     <div class="header-meta-control-link with-links">
-                        <a href="/login">Login</a>
-                        <a class="language-link" href="/en">EN</a>
+                        <div class="account-control"><img src="https://cdn.shopify.com/s/files/1/0045/5104/9304/t/27/assets/AC_ECOM_SITE_2020_REFRESH_1_INDEX_M2_THUMBS-V2-1.jpg?v=8913815134086573859" alt=""> <div>Man Man</div></div>
+                        <a class="language-link" href="/logout">Logout</a>
                     </div>
-                    
+                    <style>
+                        .account-control img{
+                            width: 45px;
+                            height: 45px;
+                            border-radius: 50%;
+                            border: 2px solid #ffcc00;
+                            margin-right: 10px;
+                        }
+                        .account-control{
+                            display: grid;
+                            grid-template-columns: auto auto;
+                            align-items: center;
+
+                        }
+                        .language-link{
+                            display: grid;
+                            align-items: center;
+                        }
+                    </style>
                 </div>
             </div>
         </div>  
     </header>
-    
-    <section class="main_login">
-        <form class="main_login-exact">
-            <img class="form-logo-img" src="./images/Logofull.svg" alt="">
-            <div class="main_login-exact-text">
-                Login to your Account to manage all the service and explore our tools
+    <style>
+        .dashboard_section{
+            padding-top: 80px;
+            background-color: black;
+            width: 100%;
+            min-height: calc(100vh - 80px);
+        }
+        .dasboard_body{
+            display: flex;
+            width: 100%;
+            min-height: 100%;
+        }
+        .dasboard_controll{
+            width: 320px;
+            background-color: #f5f8fa;
+            min-height: calc(100vh - 160px);
+
+
+        }
+        .dasboard_content{
+            width: 100%;
+            height: 100%;
+        }
+        .dashboard_contrll_links a{
+            color: #2e343b;
+            font-size: 13px;
+        }
+        .dashboard_contrll_links{
+            display: grid;
+            width: 100%;
+            gap:20px;
+            grid-template-columns: auto;
+        }
+        .dashboard_contrll_links > a{
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .dashboard_contrll_links_not_main{
+            display: grid;
+            grid-template-columns: auto;
+            gap:20px;
+        }
+        .dasboard_controll{
+            display: grid;
+            grid-template-rows: 1fr auto;
+            align-items: center;
+            justify-items: center;
+        
+        padding: 80px 10px 40px;}
+        .contacts-social-dashboard{
+            display: grid;
+            column-gap: 20px;
+            justify-items: center;
+            grid-template-columns: auto auto auto auto;
+        }
+        .contacts-social-dashboard svg{
+            height: 25px;
+            fill: #2e343b;
+            width: 25px;
+        }
+        
+        .contacts-social-dashboard a:hover svg{
+            height: 25px;
+            fill: #ffcc00;
+            width: 25px;
+        }
+    </style>
+    <section class="dashboard_section">
+        <div class="dasboard_body">
+            <div class="dasboard_controll">
+                <div class="dashboard_contrll_links">
+                    <a href="#">Home</a>
+                    <a href="#">Shipping</a>
+                    <div class="dashboard_contrll_links_not_main">
+                        <a href="#">
+                            Current shipment list
+                        </a>
+                        <a href="#">
+                            Create new shipment
+                        </a>
+                        <a href="#">
+                            Payments
+                        </a>
+                        <a href="#">
+                            Shipment history
+                        </a>
+                    </div>
+                    <a href="#">
+                        Free carfax
+                    </a>
+                    <a href="#">
+                        Tools
+                    </a>
+                    <div class="dashboard_contrll_links_not_main">
+                        <a href="#">
+                            Templates
+                        </a>
+                        <a href="#">
+                            Instruction
+                        </a>
+                        <a href="#">
+                            Calculator
+                        </a>
+                    </div>
+                    <a href="#">
+                        Contact us
+                    </a>
+                </div>
+                <ul class="contacts-social-dashboard">
+                    <li>
+                        <a href="https://www.facebook.com/yellowgarage.co" target="_blank">
+                            <svg viewBox="-21 -21 682.66669 682.66669" xmlns="http://www.w3.org/2000/svg"><path d="m604.671875 0h-569.375c-19.496094.0117188-35.30078125 15.824219-35.296875 35.328125v569.375c.0117188 19.496094 15.824219 35.300781 35.328125 35.296875h306.546875v-247.5h-83.125v-96.875h83.125v-71.292969c0-82.675781 50.472656-127.675781 124.222656-127.675781 35.324219 0 65.679688 2.632812 74.527344 3.808594v86.410156h-50.855469c-40.125 0-47.894531 19.066406-47.894531 47.050781v61.699219h95.9375l-12.5 96.875h-83.4375v247.5h162.796875c19.507813.003906 35.324219-15.804688 35.328125-35.3125 0-.003906 0-.007812 0-.015625v-569.375c-.007812-19.496094-15.824219-35.30078125-35.328125-35.296875zm0 0"></path></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/yellowgarage.co/?hl=ru" target="_blank">
+                            <svg viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg"><path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm-117.40625 395.996094c-77.195312 0-139.996094-62.800782-139.996094-139.996094s62.800782-139.996094 139.996094-139.996094 139.996094 62.800782 139.996094 139.996094-62.800782 139.996094-139.996094 139.996094zm143.34375-246.976563c-22.8125 0-41.367188-18.554687-41.367188-41.367187s18.554688-41.371094 41.367188-41.371094 41.371094 18.558594 41.371094 41.371094-18.558594 41.367187-41.371094 41.367187zm0 0"></path><path d="m256 146.019531c-60.640625 0-109.980469 49.335938-109.980469 109.980469 0 60.640625 49.339844 109.980469 109.980469 109.980469 60.644531 0 109.980469-49.339844 109.980469-109.980469 0-60.644531-49.335938-109.980469-109.980469-109.980469zm0 0"></path><path d="m399.34375 96.300781c-6.257812 0-11.351562 5.09375-11.351562 11.351563 0 6.257812 5.09375 11.351562 11.351562 11.351562 6.261719 0 11.355469-5.089844 11.355469-11.351562 0-6.261719-5.09375-11.351563-11.355469-11.351563zm0 0"></path></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://invite.viber.com/?g2=AQBrCzOf7CmAcEx1x9XTnGdDLBb4SOA5J+9zk5z7Do0PO9AF8PIn1ad9w86JF0nn">
+                            <svg enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="m23.155 13.893c.716-6.027-.344-9.832-2.256-11.553l.001-.001c-3.086-2.939-13.508-3.374-17.2.132-1.658 1.715-2.242 4.232-2.306 7.348-.064 3.117-.14 8.956 5.301 10.54h.005l-.005 2.419s-.037.98.589 1.177c.716.232 1.04-.223 3.267-2.883 3.724.323 6.584-.417 6.909-.525.752-.252 5.007-.815 5.695-6.654zm-12.237 5.477s-2.357 2.939-3.09 3.702c-.24.248-.503.225-.499-.267 0-.323.018-4.016.018-4.016-4.613-1.322-4.341-6.294-4.291-8.895.05-2.602.526-4.733 1.93-6.168 3.239-3.037 12.376-2.358 14.704-.17 2.846 2.523 1.833 9.651 1.839 9.894-.585 4.874-4.033 5.183-4.667 5.394-.271.09-2.786.737-5.944.526z"></path><path d="m12.222 4.297c-.385 0-.385.6 0 .605 2.987.023 5.447 2.105 5.474 5.924 0 .403.59.398.585-.005h-.001c-.032-4.115-2.718-6.501-6.058-6.524z"></path><path d="m16.151 10.193c-.009.398.58.417.585.014.049-2.269-1.35-4.138-3.979-4.335-.385-.028-.425.577-.041.605 2.28.173 3.481 1.729 3.435 3.716z"></path><path d="m15.521 12.774c-.494-.286-.997-.108-1.205.173l-.435.563c-.221.286-.634.248-.634.248-3.014-.797-3.82-3.951-3.82-3.951s-.037-.427.239-.656l.544-.45c.272-.216.444-.736.167-1.247-.74-1.337-1.237-1.798-1.49-2.152-.266-.333-.666-.408-1.082-.183h-.009c-.865.506-1.812 1.453-1.509 2.428.517 1.028 1.467 4.305 4.495 6.781 1.423 1.171 3.675 2.371 4.631 2.648l.009.014c.942.314 1.858-.67 2.347-1.561v-.007c.217-.431.145-.839-.172-1.106-.562-.548-1.41-1.153-2.076-1.542z"></path><path d="m13.169 8.104c.961.056 1.427.558 1.477 1.589.018.403.603.375.585-.028-.064-1.346-.766-2.096-2.03-2.166-.385-.023-.421.582-.032.605z"></path></g></svg>                    </a>
+                    </li>
+                    <li>
+                        <a href="http://t.me/Yellowgarage20" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"></path></svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="form-main-control">
-                <div class="main_login-input">
-                    <input placeholder="Email Address" type="text" class="main_login-exact-input" />
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 433.664 433.664" style="enable-background:new 0 0 433.664 433.664;" xml:space="preserve"><g>	<g>		<path d="M229.376,271.616c-4.096,2.56-8.704,3.584-12.8,3.584s-8.704-1.024-12.8-3.584L0,147.2v165.376c0,35.328,28.672,64,64,64			h305.664c35.328,0,64-28.672,64-64V147.2L229.376,271.616z"/>	</g></g><g>	<g>		<path d="M369.664,57.088H64c-30.208,0-55.808,21.504-61.952,50.176l215.04,131.072l214.528-131.072			C425.472,78.592,399.872,57.088,369.664,57.088z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-                </div>
-                <div class="main_login-input">
-                    <input placeholder="Password" type="password" class="main_login-exact-input" />
-                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 469.44 469.44" style="enable-background:new 0 0 469.44 469.44;" xml:space="preserve"><g>	<g>		<g>			<path d="M231.147,160.373l67.2,67.2l0.32-3.52c0-35.307-28.693-64-64-64L231.147,160.373z"/>			<path d="M234.667,117.387c58.88,0,106.667,47.787,106.667,106.667c0,13.76-2.773,26.88-7.573,38.933l62.4,62.4				c32.213-26.88,57.6-61.653,73.28-101.333c-37.013-93.653-128-160-234.773-160c-29.867,0-58.453,5.333-85.013,14.933l46.08,45.973				C207.787,120.267,220.907,117.387,234.667,117.387z"/>			<path d="M21.333,59.253l48.64,48.64l9.707,9.707C44.48,145.12,16.64,181.707,0,224.053c36.907,93.653,128,160,234.667,160				c33.067,0,64.64-6.4,93.547-18.027l9.067,9.067l62.187,62.293l27.2-27.093L48.533,32.053L21.333,59.253z M139.307,177.12				l32.96,32.96c-0.96,4.587-1.6,9.173-1.6,13.973c0,35.307,28.693,64,64,64c4.8,0,9.387-0.64,13.867-1.6l32.96,32.96				c-14.187,7.04-29.973,11.307-46.827,11.307C175.787,330.72,128,282.933,128,224.053C128,207.2,132.267,191.413,139.307,177.12z"				/>		</g>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-                </div>
-                <div class="main_login-control">
-                    <div><input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label></div>
-                    <a class="main_login-control-link" href="#">Forgot Password ?</a>
-                </div>
+            <div class="dasboard_content">
+                
             </div>
-            <button type='submit'>Login</button>
-            <div class="register-login-now">Don't have an account yet? <a href="#">Register Now</a></div>
-        </form>
+        </div>
     </section>
+    <footer>
+        COPYRIGHT © 2021 YELLOW GARAGE. ALL RIGHTS RESERVED
+    </footer>
 </body>
 </html>
+<style>
+    footer{
+        display: grid;
+        align-items: center;
+        justify-items:right;
+        padding: 0 30px;
+        color: white;
+        background-color: #2e343b;
+        font-size: 14px;
+        height: 80px;
+}
+</style>
 <script src="./script.js"></script>

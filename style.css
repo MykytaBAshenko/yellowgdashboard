@@ -57,6 +57,7 @@ header .logo-link img{
 .header-meta-control{
     display: grid;
     grid-template-columns: auto auto auto;
+    align-items: center;
     column-gap: 85px;
 }
 .header-meta-control-link{
@@ -115,6 +116,10 @@ header .logo-link img{
     transform: translate(-14px, -50%);
     position: absolute;
 
+}
+
+header .logo-image-150px{
+    height: 150px;
 }
 @media screen and (max-width: 1500px) {
     .header-navbar{
@@ -397,4 +402,59 @@ gap: 20px;
 .main_login-control-link{
 justify-self: start;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.display_none_for_children > *{
+    display: none !important;
+
+}
+.display_none{
+    display: none !important;
 }
