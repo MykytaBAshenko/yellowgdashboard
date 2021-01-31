@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <header >
+    <header class="with-login" >
         <div class="header-exact">
             <a class="logo-link logo-image-150px" href="#">
                 <img class="logo-img" src="./images/Logofull.svg" alt="">
@@ -52,6 +52,9 @@
                             display: grid;
                             align-items: center;
                         }
+                        header.with-login{
+                            padding: 0 30px 0 160px;
+                        }
                     </style>
                 </div>
             </div>
@@ -79,6 +82,7 @@
         .dasboard_content{
             width: 100%;
             height: 100%;
+            min-height: calc(100vh - 160px);
         }
         .dashboard_contrll_links a{
             color: #2e343b;
@@ -93,14 +97,20 @@
         .dashboard_contrll_links > a{
             text-transform: uppercase;
             font-weight: 800;
+            padding-left: 20px;
         }
         .dashboard_contrll_links_not_main{
             display: grid;
             grid-template-columns: auto;
             gap:20px;
         }
+        .dashboard_contrll_links_not_main a{
+            padding-left: 60px;
+        }
         .dasboard_controll{
+            overflow: auto;
             display: grid;
+            max-height: calc(100vh -160px);
             grid-template-rows: 1fr auto;
             align-items: center;
             justify-items: center;
@@ -123,13 +133,27 @@
             fill: #ffcc00;
             width: 25px;
         }
+        .active_dashboard_link{
+            padding: 20px 20px 20px 60px !important;
+            background-color: white;
+            position: relative;
+            border-left: 4px solid #ffcc00;
+        }
+        .active_dashboard_link::before {
+  content: url(images/active-link.png);
+  position: absolute;top: 50%;
+  left: 17px;
+  width: 20px;
+  height: 20px;
+  transform: translate(0, -50%);
+}
     </style>
     <section class="dashboard_section">
         <div class="dasboard_body">
-            <div class="dasboard_controll">
+            <div class="dasboard_controll" id="dasboard_controll">
                 <div class="dashboard_contrll_links">
                     <a href="#">Home</a>
-                    <a href="#">Shipping</a>
+                    <a class="active_dashboard_link" href="#">Shipping</a>
                     <div class="dashboard_contrll_links_not_main">
                         <a href="#">
                             Current shipment list
@@ -187,8 +211,588 @@
                     </li>
                 </ul>
             </div>
+            <style>
+                .dasboard_content{
+                    background-color: white;
+                    max-height: calc(100vh - 160px);
+                    padding: 0 30px 0 50px;
+                    overflow-x: auto;
+                }
+                .dasboard_content > *{
+                    min-width: 1600px;
+                }
+                /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffcc00; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffcc0080; 
+}
+
+.dashboard_breadcrumbs{
+display: grid;
+justify-items: end;
+}
+.dashboard_breadcrumbs-body{
+    margin-top: 30px;
+    font-size: 14px;
+
+}
+.dashboard_breadcrumbs-title{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+.dashboard_breadcrumbs-body a{
+    color: #2e343b;
+
+}
+.dashboard_breadcrumbs-body a:hover{
+    text-decoration: underline;
+}
+.dashboard_content_body{
+    width: 100%;
+}
+.dashboard_content_body_title{
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.dashboard_content_body_title {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.dashbord-control-btn{
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-right: 15px;
+    border: 2px solid #2e343b;
+}
+.dashboard_content_body{
+    display: grid;
+    justify-items: start;
+}
+.dashbord-control-btn svg{
+    width: 15px;
+    display: block;
+    height: 15px;
+    fill: #2e343b;
+}
+.dashbord-control-btn:hover svg,.dashbord-control-btn:hover{
+    fill: #ffcc00;
+    cursor: pointer;
+    border-color: #ffcc00;
+}
+            </style>
             <div class="dasboard_content">
-                
+                <div class="dashboard_breadcrumbs">
+                    <div class="dashboard_breadcrumbs-body">
+                        <div class="dashboard_breadcrumbs-title">
+                            shipping
+                        </div>
+                        <div class="dashboard_breadcrumbs-exact">
+                            <a href="#">Home</a> / <a href="#">Shipping</a> / <a href="#">Fast LINK !.1qw</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard_content_body">
+                    <div class="dashboard_content_body_title">
+                        <button id="dashbord-control-btn" class="dashbord-control-btn">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g>	<g>		<path d="M217.043,0.001H16.696C7.515,0.001,0,7.479,0,16.697v200.348c0,9.214,7.482,16.693,16.696,16.693h200.348			c9.214,0,16.696-7.481,16.696-16.693V16.697C233.739,7.479,226.224,0.001,217.043,0.001z"/>	</g></g><g>	<g>		<path d="M495.304,0.001H294.957c-9.18,0-16.696,7.477-16.696,16.696v200.348c0,9.214,7.482,16.693,16.696,16.693h200.348			c9.214,0,16.696-7.481,16.696-16.693V16.697C512,7.479,504.485,0.001,495.304,0.001z"/>	</g></g><g>	<g>		<path d="M217.043,278.262H16.696C7.515,278.262,0,285.739,0,294.958v200.348c0,9.214,7.482,16.693,16.696,16.693h200.348			c9.214,0,16.696-7.481,16.696-16.693V294.958C233.739,285.739,226.224,278.262,217.043,278.262z"/>	</g></g><g>	<g>		<path d="M495.304,278.262H294.957c-9.18,0-16.696,7.477-16.696,16.696v200.348c0,9.214,7.482,16.693,16.696,16.693h200.348			c9.214,0,16.696-7.481,16.696-16.693V294.958C512,285.739,504.485,278.262,495.304,278.262z"/>	</g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+                        </button><div>Your current shipment list</div>
+                    </div>
+                    <script>
+                        let ddd = document.getElementById("dashbord-control-btn")
+                        let aaa = document.getElementById("dasboard_controll")
+                        ddd.onclick = function (){
+                            if (aaa.className === "dasboard_controll") {
+                                aaa.className = "dasboard_controll display_none";
+} else {
+    aaa.className = "dasboard_controll";
+}
+                        }
+                    </script>
+                    <style>
+                        .dashboard_content_body_table{
+                            display: flex;
+                            width: 100%;
+                        }
+                        .dashboard_content_body_table-context{
+                            display: flex;
+                            width: 100%;
+                        }
+                        .dashboard_content_body_table-info{
+                            display: grid;
+                            min-width: 260px;
+                            
+                        }
+                        .dashboard_content_body_table-info>div{
+                            height: 60px;
+                            font-weight: 800;
+                            display: grid;
+                            align-items: center;
+                            padding: 0 5px 0 10px;
+                        }
+                        .dashboard_content_body_table-info>div {
+                            line-height: 2;
+                        }
+                        .dashboard_content_body_table-info>div:nth-child(odd) {
+                            background: #e2e2e6;
+                        }
+                        .dashboard_content_body_table-info>div:nth-child(even) {
+                            background: #ebebec;
+                        }
+                        .dashboard_content_body_table-context-column{
+                            width: 100%;
+                        }
+                        .dashboard_content_body_table-context-column>div{
+                            height: 60px;
+                            display: grid;
+                            justify-items: center;
+                            align-items: center;
+                        }
+                        .dashboard_content_body_table-context-column>div:nth-child(odd) {
+                        background-color: #eeeef2;
+
+                        }
+                        .dashboard_content_body_table-context-column>div:nth-child(even) {
+                            background-color: #f8f8f9;
+                        }
+                        .dashboard_content_body_table-context-column-title{
+                            font-weight: 800;
+                        }
+                        .dashboard_content_body_table-context-column-all{
+                            font-weight: 800;
+                        }
+                    </style>
+                    <div class="dashboard_content_body_table">
+                        <div class="dashboard_content_body_table-info">
+                            <div></div>
+                            <div>Car under Auction</div>
+                            <div>Delivered to the port of loading</div>
+                            <div>Loaded into container</div>
+                            <div>Delivered to destination port</div>
+                            <div>All</div>
+                        </div>
+                        <div class="dashboard_content_body_table-context">
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                            <div class="dashboard_content_body_table-context-column">
+                                <div class="dashboard_content_body_table-context-column-title">
+                                    nj - new jersey
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div>
+                                    0
+                                </div>
+                                <div class="dashboard_content_body_table-context-column-all">
+                                    0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-for-btn">
+                    <button>Resset Filters</button>
+                </div>
+                <style>
+                    .container-for-btn{
+                        display: grid;
+                        margin-top: 40px;
+                        margin-bottom: 80px;
+                        justify-items: start;
+                    }
+                    .container-for-btn button{
+                        padding: 12px 15px;
+                        background-color: #2e343b;
+                        color: white;
+                        border: 2px solid #2e343b;
+                        font-weight: 800;
+                        border-radius: 50px;
+                    }
+                    .container-for-btn button:hover{
+                        color: #2e343b;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                    .container-for-inputs{
+                        display: grid;
+                        width: 100%;
+                    }
+                    .container-for-inputs-body{
+                        display: flex;
+                        width: 100%;
+
+                    }
+                    .input-column{
+                        width: 100%;
+
+                        display: grid;
+                        align-items: center;
+                    }
+                    .input-column-titile{
+                        font-weight: 800;
+                    }
+                    .input-column-input input{
+                        width: 80px;
+
+                    }
+                    .input-column-titile{
+                        height: 60px;
+                        padding: 0 5px;
+                        text-align: center;
+                        display: grid;
+                        width: 100%;
+                        align-items: center;
+                        justify-items: center;
+                        background-color: #eeeef2;
+                    }   
+
+                    .input-column-input{
+                        background-color: #f8f8f9;
+                        display: grid;
+                        height: 90px;
+                        justify-items: center;
+                        padding: 20px 0 ;
+
+                    }
+                    .input-column-input input,                     .input-column-input select{
+                        background-color: transparent;
+                        border:1px solid #eeeef2;
+                        font-size: 14px;
+                        padding: 15px 4px;
+                    }
+                </style>
+                <div class="container-for-inputs">
+                    <div class="container-for-inputs-body">
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name  in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <select class="select">
+                                    <option value="value1">Fruits</option>
+                                    <option value="value1">Mango</option>
+                                    <option value="value2">Banana</option>
+                                    <option value="value3">Cherries</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="input-column">
+                            <div class="input-column-titile">
+                                Name in (Model)
+                            </div>
+                            <div class="input-column-input">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

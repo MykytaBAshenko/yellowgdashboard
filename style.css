@@ -21,12 +21,11 @@ header{
   position: absolute;
   width: 100%;  
   background-color: #2e343b;
-    padding: 0 50px;
+    padding: 0 160px;
     
 }
 .header-exact{
     width: 100%;
-    max-width: 1640px;
     display: grid;
     margin: 0 auto;
     align-items: center;
@@ -79,7 +78,6 @@ header .logo-link img{
 .header-navbar{
     justify-self: end;
     padding-left: 320px;
-    max-width: 1640px;
     width: 100%;
 }
 .header-navbar-links a{
@@ -126,24 +124,20 @@ header .logo-image-150px{
         padding-left: 200px;
     }
 
-}
-@media screen and (max-width: 1350px) {
     .header-navbar-links {
         column-gap: 40px;
     }
     .header-meta-control {
         column-gap: 40px;
     }
-}
-@media screen and (max-width: 1200px) {
+
     header .logo-link{
         height: 150px;
     }
     .header-navbar{
         padding-left: 120px;
     }
-}
-@media screen and (max-width: 1110px) {
+
     .header-meta-control {
         column-gap: 20px;
     }
@@ -152,66 +146,8 @@ header .logo-image-150px{
     }
 }
 
-@media screen and (max-width: 992px) {
-    header .logo-link img{
-    transform: translate(0,15px);
-}
-    .header-navbar{
-        display: none;
-        padding: 0;
-    }
-header .logo-link{
-    height: 80px;
-}
-    .header-btn-control{
-        display: block;
-        justify-self: end;
-        padding: 6px;
-        border: 2px solid white;
-        border-radius: 5px;
-    }
-    .header-btn-control svg{
-        height: 30px;
-        width: 30px;
-        display: block;
-    }
-    .header-btn-control:hover{
-        border-color: #ffcc00;
-        cursor: pointer;
-    }
-    .header-btn-control:hover svg{
-        fill: #ffcc00;
-    }
-    .header-navbar{
-        position: absolute;
-        left: 0;
-        padding: 40px 0 10px;
-        justify-items: start;
-        background-color: #2e343b;
-        grid-template-columns: auto;
-        transform: translate(0 , 80px);
-    }
-    .header-navbar>*{
-        justify-items: start;
-        padding-left: 50px;
-    }
-    .header-navbar>*>*{
-        margin-bottom: 20px;
-    }
-    .header-navbar-links{
-        grid-template-columns: auto;
-        display: grid;
-    }
-    .header-navbar-links a{
-        display: block;
-    }
-    .header-meta-control{
-        grid-template-columns: auto;
-    }
-}
-.display_block{
-    display: block;
-}
+
+
 .contacts-social{
     display: flex;
 }
@@ -226,9 +162,8 @@ header .logo-link{
     font-size: 53px;
     color: #2e343b;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 160px;
     width: 100%;
-    max-width: 1640px;
     padding-bottom: 60px;
     min-height: 100vh;
     align-items: end;
@@ -304,6 +239,7 @@ header .logo-link{
   .main_login-exact-text{
     margin-top: 30px;
     font-size: 18px;
+    text-align: center;
 }
 .form-main-control{
     display: grid;
@@ -405,7 +341,70 @@ justify-self: start;
 }
 
 
+@media screen and (max-width: 1200px) {
+    header{
+        padding: 0 50px;
+    }
+    header .logo-link img{
+    transform: translate(0,15px);
+}
 
+    .header-navbar{
+        display: none;
+        padding: 0;
+    }
+header .logo-link{
+    height: 80px;
+}
+    .header-btn-control{
+        display: block;
+        justify-self: end;
+        padding: 6px;
+        border: 2px solid white;
+        border-radius: 5px;
+    }
+    .header-btn-control svg{
+        height: 30px;
+        width: 30px;
+        display: block;
+    }
+    .header-btn-control:hover{
+        border-color: #ffcc00;
+        cursor: pointer;
+    }
+    .header-btn-control:hover svg{
+        fill: #ffcc00;
+    }
+    .header-navbar{
+        position: absolute;
+        left: 0;
+        padding: 40px 0 10px;
+        justify-items: start;
+        background-color: #2e343b;
+        grid-template-columns: auto;
+        transform: translate(0 , 80px);
+    }
+    .header-navbar>*{
+        justify-items: start;
+        padding-left: 50px;
+    }
+    .header-navbar>*>*{
+        margin-bottom: 20px;
+    }
+    .header-navbar-links{
+        grid-template-columns: auto;
+        display: grid;
+    }
+    .header-navbar-links a{
+        display: block;
+    }
+    .header-meta-control{
+        grid-template-columns: auto;
+    }
+    .main-page-content{
+        padding: 0 50px;
+    }
+}
 
 
 
@@ -458,3 +457,8 @@ justify-self: start;
 .display_none{
     display: none !important;
 }
+@media screen and (max-width: 1200px) {
+
+.display_block{
+    display: block;
+}}
