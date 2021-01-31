@@ -73,7 +73,7 @@
             min-height: 100%;
         }
         .dasboard_controll{
-            width: 320px;
+            min-width: 320px;
             background-color: #f5f8fa;
             min-height: calc(100vh - 160px);
 
@@ -215,11 +215,13 @@
                 .dasboard_content{
                     background-color: white;
                     max-height: calc(100vh - 160px);
-                    padding: 0 30px 0 50px;
+                    padding: 0 0 0 50px;
                     overflow-x: auto;
                 }
                 .dasboard_content > *{
                     min-width: 1600px;
+                    padding-right: 30px;
+
                 }
                 /* width */
 ::-webkit-scrollbar {
